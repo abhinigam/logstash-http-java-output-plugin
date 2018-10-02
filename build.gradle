@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+    }
+}
+
+shadowJar {
+    baseName = 'logProcessor'
+    classifier = 'all'
+    version = "1.0.0"
+}
+
+dependencies {
+    compile 'org.apache.httpcomponents:httpclient:4.5.3'
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.19'
+    testCompile group: 'org.mock-server', name: 'mockserver-netty', version: '3.9.1'
+    testCompile group: 'com.jayway.awaitility', name: 'awaitility', version: '1.7.0'
+}

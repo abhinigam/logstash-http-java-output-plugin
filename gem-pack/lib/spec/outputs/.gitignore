@@ -1,0 +1,10 @@
+.gradle/
+.idea/
+build/
+classes/
+output/
+out/
+gem-pack/vendor/
+
+*.iml
+.idea/
